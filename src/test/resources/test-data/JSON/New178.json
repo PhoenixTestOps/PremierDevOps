@@ -1,0 +1,15 @@
+{
+  "fields":
+  {
+    "project":
+    {
+      "id" : "10100"
+    },
+    "summary": "REST should update Story",
+    "description": "Update",
+    "issuetype":
+    {
+      "id": "10003"
+    }
+  }
+}
