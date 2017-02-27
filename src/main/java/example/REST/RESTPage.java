@@ -30,9 +30,9 @@ public class RESTPage extends PageObject {
 		String env = System.getProperty("env");
 		File envFile = new File( "src/main/resources/" + env + ".properties" );
 		
-		Properties properties = PropertyReader.getProperties(envFile);		
-		restBaseuri = properties.getProperty("rest.baseuri");
-		restBasePath = properties.getProperty("rest.basePath");
+		PropertyReader.getProperties(envFile);		
+		restBaseuri = PropertyReader.getValueOf("rest.baseuri");
+		restBasePath = PropertyReader.getValueOf("rest.basePath");
 	}
     
     //METHODS
