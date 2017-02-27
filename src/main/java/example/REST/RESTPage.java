@@ -13,7 +13,6 @@ import net.serenitybdd.core.pages.PageObject;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Properties;
 
 import static net.serenitybdd.rest.SerenityRest.*;
 
