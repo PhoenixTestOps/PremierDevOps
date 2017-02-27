@@ -7,6 +7,8 @@
 	
 	<!--PROPERTIES-->
 	<properties>
+		<!--B-->
+		<bdd.framework.utilities.version>1.0-SNAPSHOT</bdd.framework.utilities.version>	
 		<!--C-->
 		<cucumber.parallel.plugin.version>2.1.1-SNAPSHOT</cucumber.parallel.plugin.version>
 		<!--F-->
@@ -17,6 +19,8 @@
 		<java.target.version>1.8</java.target.version>
 		<!--M-->
 		<maven.compiler.version>3.1</maven.compiler.version>
+		<!--P-->
+		<post.execution.updates.plugin.version>1.0-SNAPSHOT</post.execution.updates.plugin.version>
 		<!--R-->
 		<rest.version>3.0.1</rest.version>
 		<!--S-->
@@ -26,11 +30,18 @@
 		<serenity.jira.requirements.provider.version>1.1.1</serenity.jira.requirements.provider.version>			
 		<slf4j.version>1.7.5</slf4j.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<!--END of PROPERTIES-->
 	
 	<!--DEPENDENCIES-->
 	<dependencies>
+		<!--B-->		
+		<dependency>
+			<groupId>com.homeoffice</groupId>
+			<artifactId>bdd-framework-utilities</artifactId>
+			<version>${bdd.framework.utilities.version}</version>		
+		</dependency>	
 		<!--R-->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
@@ -157,6 +168,26 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!--P-->		
+			<plugin>
+				<groupId>com.homeoffice</groupId>
+				<artifactId>post-execution-updates-plugin</artifactId>
+				<version>${post.execution.updates.plugin.version}</version>
+				<configuration>
+					<jsonResultsDir>target/site/serenity/json-results</jsonResultsDir>
+					<dataDir>src/main/resources/json</dataDir>
+					<mappingsDir>src/main/resources/mappings</mappingsDir>
+					<propertiesDir>src/main/resources</propertiesDir>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>post-execution-updates</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>			
 			<!--S-->
 			<plugin>
 				<groupId>net.serenity-bdd.maven.plugins</groupId>
@@ -195,7 +226,7 @@
 							<featuresDirectory>src/test/resources/features</featuresDirectory>
 							<cucumberOutputDir>target/site/serenity/json-results</cucumberOutputDir>
 							<format>json, pretty</format>
-							<tags>"@growl"</tags>
+							<tags>"@SJI-7"</tags>
 							<namingScheme>feature-title</namingScheme>
 						</configuration>
 					</execution>

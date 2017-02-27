@@ -3,9 +3,11 @@ package example.theorytest;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import example.utilities.DataMapping;
 
 import java.io.IOException;
+import java.util.HashMap;
+
+import com.homeoffice.bdd.framework.utilities.DataMapper;
 
 /**
  * @author : JULIA TUCKER
@@ -59,11 +61,8 @@ public class TheoryTestBookingStepDefinitions {
     @When ("^I select the test '(.*)'$")
     public void select_test(String actionName) throws IOException {
 
-        DataMapping testOptions  = new DataMapping();
-
         String filePath = "src/test/resources/test-data/mappings/TheoryTestOptions.csv";
-
-        testOptions.fill_from_file(filePath);
+    	HashMap<String, String> testOptions = DataMapper.populate(filePath);
 
         String testID = testOptions.get(actionName).toString();
 
@@ -72,11 +71,9 @@ public class TheoryTestBookingStepDefinitions {
 
     @When ("^I select the language '(.*)'$")
     public void select_language(String actionName) throws IOException {
-        DataMapping languageOptions = new DataMapping();
 
         String filePath = "src/test/resources/test-data/mappings/TheoryLanguageOptions.csv";
-
-        languageOptions.fill_from_file(filePath);
+    	HashMap<String, String> languageOptions = DataMapper.populate(filePath);
 
         String languageID = languageOptions.get(actionName).toString();
 
@@ -87,15 +84,13 @@ public class TheoryTestBookingStepDefinitions {
     @When ("^I respond '(.*)' to needing extra support$")
     public void select_support(String actionName) throws IOException {
 
-        DataMapping supportOptions = new DataMapping();
-        
-        String filePath = "src/test/resources/test-data/mappings/TheorySupportOptions.csv";
-        
-        supportOptions.fill_from_file(filePath);
+    	String filePath = "src/test/resources/test-data/mappings/TheorySupportOptions.csv";
+    	HashMap<String, String> supportOptions = DataMapper.populate(filePath);
 
         String supportID = supportOptions.get(actionName).toString();
 
         theoryTestBookingPage.support_selection(supportID);
+        theoryTestBookingPage.wait_for_progress_dialog();
         theoryTestBookingPage.next();
     }
 

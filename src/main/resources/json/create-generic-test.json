@@ -1,0 +1,16 @@
+{  
+    "fields":{  
+        "project":{  
+            "id":"10201"
+        },
+        "summary":"Scenario Name Placeholder",
+        "customfield_10202":{  
+            "value":"Automated"
+        },
+        "customfield_10401":"Scenario ID Placeholder",
+        "description":"Given, When, Then",
+        "issuetype":{  
+            "id":"10200"
+        }
+    }
+}

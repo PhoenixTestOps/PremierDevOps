@@ -3,13 +3,14 @@
   {
     "project":
     {
-      "id" : "10100"
+      "id" : "10202"
     },
-    "summary": "REST should update Story",
+    "summary": "New story created via maven",
+    "customfield_10300": "***********************************\r\nTODO: ACCEPTANCE CRITERIA\r\n***********************************",
     "description": "Update",
     "issuetype":
     {
-      "id": "10003"
+      "id": "10101"
     }
   }
 }

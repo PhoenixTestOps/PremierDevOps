@@ -1,14 +1,11 @@
-@all
+@SJI-10
 Feature: Driving Theory Test Booking
 As a UK citizen
 I want to book my driving theory test
 So that I can then book my driving test
 
-	Background:
+	Scenario Outline: Applicant successfully navigates to theory test booking page when correct details are provided
 		Given I open the Home Office Book Theory Test Page
-
-
-	Scenario Outline: Applicant successfully navigates to theory test booking page using correct details
 		When I input the surname '<Surname>' and I input the forename '<Forename>'
 		And I input '<LicenseNumber>' as my license number
 		And I input my birthdate '<Day>'/'<Month>'/'<Year>'
@@ -24,6 +21,7 @@ So that I can then book my driving test
 		
 	
 	Scenario Outline: Applicant fails to navigate to theory test booking page due to missing information
+		Given I open the Home Office Book Theory Test Page
 		When I input the surname '<Surname>' and I input the forename '<Forename>'
 		And I input '<LicenseNumber>' as my license number
 		And I input my birthdate '<Day>'/'<Month>'/'<Year>'

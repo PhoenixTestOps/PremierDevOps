@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.homeoffice</groupId>
+	<artifactId>post-execution-updates-plugin</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>maven-plugin</packaging>
+	
+	<!--PROPERTIES-->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!--B-->
+		<bdd.framework.utilities.version>1.0-SNAPSHOT</bdd.framework.utilities.version>
+		<!--G-->
+		<google.gson.version>2.4</google.gson.version>
+		<!--J-->
+		<json.path.version>2.2.0</json.path.version>
+		<java.source.version>1.8</java.source.version>
+		<java.target.version>1.8</java.target.version>
+		<!--M-->
+		<maven.plugin.api.version>3.0</maven.plugin.api.version>
+		<maven.plugin.annotations.version>3.4</maven.plugin.annotations.version>
+		<maven.compiler.version>3.1</maven.compiler.version>
+		<!--R-->
+		<rest.assured.version>2.9.0</rest.assured.version>
+	</properties>
+	<!--END of PROPERTIES-->
+
+	<!--DEPENDENCIES-->
+	<dependencies>
+		<!--B-->		
+		<dependency>
+			<groupId>com.homeoffice</groupId>
+			<artifactId>bdd-framework-utilities</artifactId>
+			<version>${bdd.framework.utilities.version}</version>		
+		</dependency>
+		<!--G-->		
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>${google.gson.version}</version>
+		</dependency>
+		<!--J-->		
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>${json.path.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>${rest.assured.version}</version>
+		</dependency>
+		<!--M-->		
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-api</artifactId>
+			<version>${maven.plugin.api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugin-tools</groupId>
+			<artifactId>maven-plugin-annotations</artifactId>
+			<version>${maven.plugin.annotations.version}</version>
+			<scope>provided</scope>
+		</dependency>		
+	</dependencies>
+	<!--END of DEPENDENCIES-->
+	
+	<!--BUILD-->
+	<build>
+		<!--PLUGINS-->
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.version}</version>
+				<configuration>
+					<source>${java.source.version}</source>
+					<target>${java.target.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<!--END of PLUGINS-->
+	</build>
+</project>

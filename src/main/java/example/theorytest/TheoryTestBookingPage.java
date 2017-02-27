@@ -9,6 +9,9 @@ import net.thucydides.core.annotations.DefaultUrl;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 /**
  * @author : JULIA TUCKER
  * @date : 20/12/2016
@@ -17,6 +20,9 @@ import static org.junit.Assert.assertEquals;
 //SPECIFY AND INITIALISE URL ADDRESS
 @DefaultUrl("https://www.gov.uk/book-theory-test")
 public class TheoryTestBookingPage extends PageObject{
+	
+	//ID of progress dialog overlay
+    private String progressDialogID = "progressDialog";
 
     //ATTRIBUTES BY XPATH
     @FindBy(xpath="//*[@id=\"get-started\"]/a")
@@ -167,4 +173,13 @@ public class TheoryTestBookingPage extends PageObject{
         CONTINUE.click();
     }
 
+    /**
+     * Wait for the progress dialog overlay to disappear.
+     * This is to mitigate race conditions between page load time and driver execution speed. The issue is noticeable in Chrome by virtue of the error:
+     * "WebDriverException: Element is not clickable..."
+     */
+    public void wait_for_progress_dialog(){
+    	WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+    	wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(progressDialogID)));
+    }
 }

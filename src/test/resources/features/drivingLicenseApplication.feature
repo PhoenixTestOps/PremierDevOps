@@ -1,13 +1,11 @@
-@all
+@SJI-8
 Feature: Driving License Application
 As a UK citizen
 I want to apply for my provisional driving license
-So that I can begin learning to drive
-
-	Background:
-		Given I open the Home Office Driving License Application Page
+So that I can begin learning to drive	
 		
 	Scenario Outline: Application is accepted when correct details are provided
+		Given I open the Home Office Driving License Application Page
 		When I select the title '<Title>'
 		When I input the surname '<Surname>' and then I input the forename '<Forename>'
 		And I select the gender '<Gender>'
@@ -24,6 +22,7 @@ So that I can begin learning to drive
 
 
 	Scenario Outline: Application fails when when incomplete input is provided
+		Given I open the Home Office Driving License Application Page
 		When I select the title '<Title>'
 		When I input the surname '<Surname>' and then I input the forename '<Forename>'
 		And I select the gender '<Gender>'
@@ -39,6 +38,7 @@ So that I can begin learning to drive
 		
 	
 	Scenario Outline: Application fails when applicant is underage
+		Given I open the Home Office Driving License Application Page
 		When I select the title '<Title>'
 		When I input the surname '<Surname>' and then I input the forename '<Forename>'
 		And I select the gender '<Gender>'

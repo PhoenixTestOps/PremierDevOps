@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.homeoffice</groupId>
+	<artifactId>bdd-framework-utilities</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	
+	<!--PROPERTIES-->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!--G-->
+		<google.gson.version>2.4</google.gson.version>
+		<!--J-->
+		<java.source.version>1.8</java.source.version>
+		<java.target.version>1.8</java.target.version>
+		<!--M-->
+		<maven.compiler.version>3.1</maven.compiler.version>		
+	</properties>
+	<!--END of PROPERTIES-->	
+
+	<!--DEPENDENCIES-->
+	<dependencies>
+		<!--G-->		
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>${google.gson.version}</version>
+		</dependency>
+	</dependencies>
+	<!--END of DEPENDENCIES-->	
+	
+	<!--BUILD-->
+	<build>
+		<!--PLUGINS-->
+		<plugins>
+			<!--C-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.version}</version>
+				<configuration>
+					<source>${java.source.version}</source>
+					<target>${java.target.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<!--END OF PLUGINS-->
+	</build>	
+	<!--END OF BUILD-->		
+</project>

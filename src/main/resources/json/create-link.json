@@ -1,0 +1,11 @@
+{  
+    "type":{  
+        "name":"Test"
+    },
+    "inwardIssue":{  
+        "key":"#testKey#"
+    },
+    "outwardIssue":{  
+        "key":"#storyKey#"
+    }
+}
