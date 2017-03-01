@@ -12,6 +12,7 @@ import com.jayway.restassured.response.Response;
 import net.serenitybdd.core.pages.PageObject;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static net.serenitybdd.rest.SerenityRest.*;
@@ -57,7 +58,7 @@ public class RESTPage extends PageObject {
         return hasPermission;
     }
 
-    public int createStory(String filePath) {
+    public int createStory(String filePath) throws FileNotFoundException {
     	
     	JsonObject fileObject = JSONDeserialiser.deserialise( new File(filePath));
     	
@@ -76,7 +77,7 @@ public class RESTPage extends PageObject {
     	return response.getStatusCode();
     }
 
-    public int updateStory(String filePath) {
+    public int updateStory(String filePath) throws FileNotFoundException {
 
         JsonObject fileObject = JSONDeserialiser.deserialise( new File(filePath));
         
