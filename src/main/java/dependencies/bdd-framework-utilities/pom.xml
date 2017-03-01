@@ -12,8 +12,12 @@
 		<!--J-->
 		<java.source.version>1.8</java.source.version>
 		<java.target.version>1.8</java.target.version>
+		<junit.version>4.11</junit.version>
+		<jacoco.maven.plugin.version>0.7.7.201606060606</jacoco.maven.plugin.version>		
 		<!--M-->
-		<maven.compiler.version>3.1</maven.compiler.version>		
+		<maven.compiler.version>3.1</maven.compiler.version>
+		<maven.javadoc.plugin.version>2.10.4</maven.javadoc.plugin.version>
+		<maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>		
 	</properties>
 	<!--END of PROPERTIES-->	
 
@@ -25,12 +29,18 @@
 			<artifactId>gson</artifactId>
 			<version>${google.gson.version}</version>
 		</dependency>
+		<!--J-->		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<!--END of DEPENDENCIES-->	
 	
 	<!--BUILD-->
 	<build>
-		<!--PLUGINS-->
 		<plugins>
 			<!--C-->
 			<plugin>
@@ -42,8 +52,69 @@
 					<target>${java.target.version}</target>
 				</configuration>
 			</plugin>
+			<!--J-->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.maven.plugin.version}</version>
+				<executions>
+					<!--
+						Prepares the property pointing to the JaCoCo runtime agent which 
+						is passed as VM argument when Maven the Surefire plugin is executed.
+					-->
+					<execution>
+						<id>pre-unit-test</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<configuration>
+							<!-- Sets the path to the file which contains the execution data. -->
+							<destFile>target/coverage-reports/jacoco-ut.exec</destFile>
+							<!-- Sets the name of the property containing the settings for JaCoCo runtime agent. -->
+							<propertyName>surefireArgLine</propertyName>						
+						</configuration>
+					</execution>
+					
+					<!-- Ensures that the code coverage report for unit tests is created after unit tests have been run. -->
+					<execution>
+						<id>post-unit-test</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<configuration>
+							<!-- Sets the path to the file which contains the execution data. -->
+							<dataFile>target/coverage-reports/jacoco-ut.exec</dataFile>
+							<!-- Sets the output directory for the code coverage report. -->
+							<outputDirectory>target/site/jacoco-ut</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>			
+			<!--M-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.plugin.version}</version>
+				<configuration>
+					<argLine>${surefireArgLine}</argLine>
+				</configuration>
+			</plugin>			
 		</plugins>
-		<!--END OF PLUGINS-->
 	</build>	
-	<!--END OF BUILD-->		
+	<!--END OF BUILD-->
+	
+	<!--REPORTING-->
+	<reporting>
+		<plugins>
+			<!--M-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven.javadoc.plugin.version}</version>
+			</plugin>
+		</plugins>
+	</reporting>
+	<!--END OF REPORTING-->
+	
 </project>
