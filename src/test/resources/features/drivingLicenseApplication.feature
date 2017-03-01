@@ -1,4 +1,4 @@
-@SJI-8
+@issue:SJI-8
 Feature: Driving License Application
 As a UK citizen
 I want to apply for my provisional driving license

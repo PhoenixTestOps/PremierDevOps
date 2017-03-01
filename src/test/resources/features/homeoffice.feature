@@ -1,4 +1,4 @@
-@SJI-9
+@issue:SJI-9
 Feature: Homeoffice navigation
 As a student
 I want to navigate to the Government student finance page

@@ -1,4 +1,4 @@
-@SJI-11
+@issue:SJI-11
 Feature: Update JIRA
 As a JIRA user
 I want to update issues
