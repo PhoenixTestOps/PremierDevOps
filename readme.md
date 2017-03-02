@@ -12,13 +12,17 @@ This framework provides the capability to create and execute business facing tes
 ## Configuration
 Once you have cloned the [qa-framework/bdd-acceptance-test](https://gitlab.com/qa-framework/bdd-acceptance-test) repo locally, the following updates will be required in the project:
 
+
 ### serenity.properties
 `serenity.properties` lives in the root directory of your project. It is required in order to configure a number of property values that Serenity requires in order to execute tests and integrate with jira.
 
 Comments have been provided in the file to help you understand the purpose of the property. The entire list of properties can be found [here](http://serenity-bdd.info/docs/serenity/#_serenity_system_properties_and_configuration)
 
-### < environment >.properties
 
+### < environment >.properties
+An environment file must be created for each environment that your tests will run against. This will contain environment specific configuration that your tests will require at runtime.
+
+There is no strict naming convention, but the name of the file (excluding extension) will be passed in as a parameter when running your tests from Maven.
 
 ## Usage
 
