@@ -17,8 +17,9 @@ Usage
 Once you have cloned the [qa-framework/bdd-acceptance-test](https://gitlab.com/qa-framework/bdd-acceptance-test) repo locally, the following updates will be required:
 
 
-###Serenity.properties
+###serenity.properties
 
+serenity.properties lives in the root directory of your project.
 
 ###<env>.properties
 
