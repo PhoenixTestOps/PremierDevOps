@@ -1,6 +1,6 @@
 # bdd-acceptance-test
 
-> ***This page is in the process of being updated. Hit refresh to see the magic unfold...***
+> ***This page is in the process of being updated***
 
 This framework provides the capability to create and execute business facing tests using the BDD software development process. It provides a wrapper around [Serenity](http://www.thucydides.info), a BDD open source library. The key features provided are:
 
@@ -19,10 +19,12 @@ Once you have cloned the [qa-framework/bdd-acceptance-test](https://gitlab.com/q
 Comments have been provided in the file to help you understand the purpose of the property. The entire list of properties can be found [here](http://serenity-bdd.info/docs/serenity/#_serenity_system_properties_and_configuration)
 
 
-### < environment >.properties
+### < env >.properties
 An environment file must be created for each environment that your tests will run against. This will contain environment specific configuration that your tests will require at runtime.
 
-There is no strict naming convention, but the name of the file (excluding extension) will be passed in as a parameter when running your tests from Maven.
+The location of the file is currently set to `src/main/java`
+
+There is no strict naming convention, but the name of the file (excluding extension) will have to be passed in as a cmd line parameter when running your tests from Maven. For example, if you call your file `local.properties`, then the cmd line arg to pass to the `mvn` command would be `-Denv=local`.
 
 ## Usage
 
