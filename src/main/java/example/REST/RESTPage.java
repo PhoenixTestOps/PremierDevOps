@@ -63,7 +63,7 @@ public class RESTPage extends PageObject {
 
     public int createStory(String filePath) throws FileNotFoundException {
     	
-    	JsonObject fileObject = JSONDeserialiser.deserialise( new File(filePath));
+    	JsonObject fileObject = JSONDeserialiser.deserialiseToObject(new File(filePath));
     	
     	response = 	given().
     					contentType(ContentType.JSON).body(fileObject).
@@ -82,7 +82,7 @@ public class RESTPage extends PageObject {
 
     public int updateStory(String filePath) throws FileNotFoundException {
 
-        JsonObject fileObject = JSONDeserialiser.deserialise( new File(filePath));
+        JsonObject fileObject = JSONDeserialiser.deserialiseToObject(new File(filePath));
         
         response =	given().
         				contentType(ContentType.JSON).body(fileObject).
