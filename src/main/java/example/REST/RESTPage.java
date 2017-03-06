@@ -27,6 +27,9 @@ public class RESTPage extends PageObject {
 	
 	public RESTPage() throws IOException{
 		
+		//TODO - Update this such that the user specifies the entire path in mvn.
+		//This will also mean that the property need not be passed in at teh cmd line
+		//Also add a useful message incase the file is missing
 		String env = System.getProperty("env");
 		File envFile = new File( "src/main/resources/" + env + ".properties" );
 		
