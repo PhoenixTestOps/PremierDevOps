@@ -99,22 +99,26 @@
 				<configuration>
 					<argLine>${surefireArgLine}</argLine>
 				</configuration>
-			</plugin>			
-		</plugins>
-	</build>	
-	<!--END OF BUILD-->
-	
-	<!--REPORTING-->
-	<reporting>
-		<plugins>
-			<!--M-->
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>${maven.javadoc.plugin.version}</version>
-			</plugin>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>javadoc</goal>
+						</goals>
+						<configuration>
+							<reportOutputDirectory>target/site/javadoc</reportOutputDirectory>
+						</configuration>						
+					</execution>
+				</executions>
+			</plugin>			
 		</plugins>
-	</reporting>
-	<!--END OF REPORTING-->
+	</build>	
+	<!--END OF BUILD-->
 	
 </project>
