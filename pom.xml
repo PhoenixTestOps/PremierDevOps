@@ -182,6 +182,10 @@
 						</goals>
 					</execution>
 				</executions>
+				<!-- The following dependency is required to allow JIRA to determine the epics and stories that you have defined, 
+						and list them in the Requirements page. Uncomment this to enable that functionality ONLY when you have a working instance
+						of JIRA that your framework can connect to, else it will throw a net.serenitybdd.plugins.jira.model.JQLException. -->
+				<!--
 				<dependencies>
 					<dependency>
 						<groupId>net.serenity-bdd</groupId>
@@ -189,8 +193,9 @@
 						<version>${serenity.jira.requirements.provider.version}</version>
 					</dependency>
 				</dependencies>
+				-->
 			</plugin>
-			<!--P-->		
+			<!--P-->
 			<plugin>
 				<groupId>com.homeoffice</groupId>
 				<artifactId>post-execution-updates-plugin</artifactId>
