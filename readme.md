@@ -8,6 +8,7 @@
 2. Java is installed and the environment varibale set (From the command line run "java -version")
 3. Git is installed and the environment variable set (From the command line run "git --version")
 
+
 This framework provides the capability to create and execute business facing tests using the BDD software development process. It provides a wrapper around [Serenity](http://www.thucydides.info), a BDD open source library. The key features provided are:
 
 1. Tests can be written in feature files using the "Given, When, Then" structure (by using Gherkin, which is the name of Cucumber's DSL).
@@ -17,8 +18,10 @@ This framework provides the capability to create and execute business facing tes
 5. Webdriver support using [Serenity Page Objects](http://serenity-bdd.info/docs/serenity/#_writing_serenity_page_objects)
 6. Testing REST services using [Rest Assured](http://serenity-bdd.info/docs/serenity/#_testing_rest_with_serenity_bdd)
 
+
 ## Configuration
 Once you have cloned the [qa-framework/bdd-acceptance-test](https://gitlab.com/qa-framework/bdd-acceptance-test) repo locally, the following updates will be required in the project:
+
 
 ### cucumber-jvm-parallel-plugin
 The purpose of this plugin is to facilitate parallel execution of tests as it generates a Cucumber runner for each scenario/feature file found in your project. It must be installed to your local .m2 folder using the following command (assuming you are in the root dir):
@@ -27,15 +30,18 @@ The purpose of this plugin is to facilitate parallel execution of tests as it ge
 
 Runners are created on the fly and can be found under `target/generated-test-sources/cucumber`. They take the naming convention `FeatureXXIT.java`, where XX is a one up counter.
 
+
 ### serenity.properties
 `serenity.properties` lives in the root directory of your project. It is required in order to configure a number of property values that Serenity requires in order to execute tests and integrate with JIRA. Please review the file for a list 
 
 Comments have been provided in the file to help you understand the purpose of the property. The entire list of properties can be found [here](http://serenity-bdd.info/docs/serenity/#_serenity_system_properties_and_configuration)
 
+
 ### < env >.properties
 If you have environment specific configuration that your tests need access to at runtime, then an environment file can be created. The location of the file is currently set to `src/main/resources`
 
 There is no strict naming convention, but the name of the file (excluding extension) must be passed in as a cmd line parameter when running your tests from Maven. For example, if you call your file `local.properties`, then the cmd line arg to pass to the `mvn` command would be `-Denv=local`.
+
 
 ### pom.xml
 The pom.xml requires minimal configuration in order to execute the tests. There are 2 specific capabilities that will need to be enabled if you wish to use them:
@@ -45,6 +51,7 @@ The `serenity-jira-requirements-provider` dependency will allow JIRA to determin
 
 2. Enable post execution updates within Zephyr
 This plugin offers the capability to create Zephyr tests for your scenarios and update their execution status. It is disabled by default and can be enabled if you have connectivity to a working instance of JIRA and Zephyr. Please visit the [bdd-jira-zephyr-plugin](https://gitlab.com/qa-framework/bdd-jira-zephyr-plugin) homepage for more information about the plugin.hT
+
 
 ## Usage
 
@@ -57,6 +64,7 @@ The framework is divided as follows:
   src/test/java      | Step definitions
   src/test/resources | Test resources and Feature files
 
+
 Examples have been provided within the framework to help build your understanding.
 
 The tests can be executed in a number of ways in Maven:
@@ -67,6 +75,7 @@ The tests can be executed in a number of ways in Maven:
   `mvn clean verify -Denv=local`							| Run all scenarios and pass in an environment file
   `mvn clean verify -Dit.test=Feature01IT`				| Run a single scenario
   `mvn failsafe:integration-test -Dit.test=Belly01IT`	| Run a single scenario, but without recompiling the code
+
 
 ## Reports
 Once you have executed the tests, Serenity will create reports under the `target/site/serenity/index.html`.
