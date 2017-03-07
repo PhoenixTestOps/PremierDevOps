@@ -1,4 +1,5 @@
-# bdd-acceptance-test
+bdd-acceptance-test
+===================
 
 > ***This page is in the process of being updated***
 
@@ -9,11 +10,11 @@ This framework provides the capability to create and execute business facing tes
 3. Feature coverage can be easily viewed if your JIRA project is categorised into epics and links.
 4. The status of a JIRA story can be updated, depending on the outcome of the tests.
 5. Webdriver support using [Serenity Page Objects](http://serenity-bdd.info/docs/serenity/#_writing_serenity_page_objects)
-5. Webdriver support using [Serenity Page Objects](http://serenity-bdd.info/docs/serenity/#_writing_serenity_page_objects)
 6. Testing REST services using [Rest Assured](http://serenity-bdd.info/docs/serenity/#_testing_rest_with_serenity_bdd)
 
 
-## Configuration
+Configuration
+-------------
 Once you have cloned the [qa-framework/bdd-acceptance-test](https://gitlab.com/qa-framework/bdd-acceptance-test) repo locally, the following updates will be required in the project:
 
 
@@ -42,11 +43,13 @@ The pom.xml requires minimal configuration in order to execute the tests. There 
 1. Enable JIRA requirements in the Serenity report
 The `serenity-jira-requirements-provider` dependency will allow JIRA to determine the epics and stories that you have defined and list them in the Requirements page of the report. This dependency is required by the `serenity-maven-plugin` plugin and is disabled by default. If you have connectivity to a working instance of JIRA and wish to provide epic/story coverage in the report, then this dependency should be enabled.
 
+
 2. Enable post execution updates within Zephyr
-This plugin offers the capability to create Zephyr tests for your scenarios and update their execution status. It is disabled by default and can be enabled if you have connectivity to a working instance of JIRA and Zephyr. Please visit the [bdd-jira-zephyr-plugin](https://gitlab.com/qa-framework/bdd-jira-zephyr-plugin) homepage for more information about the plugin.hT
+This plugin offers the capability to create Zephyr tests for your scenarios and update their execution status. It is disabled by default and can be enabled if you have connectivity to a working instance of JIRA and Zephyr. Please visit the [bdd-jira-zephyr-plugin](https://gitlab.com/qa-framework/bdd-jira-zephyr-plugin) homepage for more information about the plugin.
 
 
-## Usage
+Usage
+-----
 
 The framework is divided as follows:
 
@@ -69,5 +72,7 @@ The tests can be executed in a number of ways in Maven:
   `mvn failsafe:integration-test -Dit.test=Belly01IT`	| Run a single scenario, but without recompiling the code
 
 
-## Reports
+Reports
+-------
+
 Once you have executed the tests, Serenity will create the report under the `target/site/serenity/index.html`.
