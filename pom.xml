@@ -196,6 +196,8 @@
 				-->
 			</plugin>
 			<!--P-->
+			<!-- This plug-in requires a working instance of jira and zephyr. -->
+			<!--			
 			<plugin>
 				<groupId>com.homeoffice</groupId>
 				<artifactId>post-execution-updates-plugin</artifactId>
@@ -214,7 +216,8 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>			
+			</plugin>
+			-->
 			<plugin>
 				<groupId>com.github.temyers</groupId>
 				<artifactId>cucumber-jvm-parallel-plugin</artifactId>
