@@ -226,6 +226,7 @@
 							<featuresDirectory>src/test/resources/features</featuresDirectory>
 							<cucumberOutputDir>target/site/serenity/json-results</cucumberOutputDir>
 							<format>json, pretty</format>
+							<tags>"@issue:SJI-7"</tags>
 							<namingScheme>feature-title</namingScheme>
 						</configuration>
 					</execution>
