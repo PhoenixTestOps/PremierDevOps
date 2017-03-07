@@ -1,4 +1,4 @@
-@issue:SJI-12
+@regression
 Feature: Wikipedia searching
 As a user
 I want to use Wikipedia

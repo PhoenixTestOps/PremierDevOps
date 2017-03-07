@@ -15,7 +15,7 @@ test:
     - mvn install:install-file -Dfile=src/main/java/dependencies/bdd-framework-utilities/bdd-framework-utilities-1.0-SNAPSHOT.jar -DpomFile=src/main/java/dependencies/bdd-framework-utilities/pom.xml -q
     - mvn install:install-file -Dfile=src/main/java/dependencies/cucumber-jvm-parallel-plugin/cucumber-jvm-parallel-plugin-2.1.1-SNAPSHOT.jar -DpomFile=src/main/java/dependencies/cucumber-jvm-parallel-plugin/pom.xml -q
     - mvn install:install-file -Dfile=src/main/java/dependencies/post-execution-updates-plugin/post-execution-updates-plugin-1.0-SNAPSHOT.jar -DpomFile=src/main/java/dependencies/post-execution-updates-plugin/pom.xml -q
-    - mvn clean verify -q -Dit.test=Belly01IT
+    - mvn clean verify -q -Denv=local "-Dcucumber.options=--tags @regression"
   artifacts:
     name: "${CI_BUILD_NAME}_${CI_BUILD_REF_NAME}"
     paths:
