@@ -167,27 +167,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
-			<!--P-->		
-			<plugin>
-				<groupId>com.homeoffice</groupId>
-				<artifactId>post-execution-updates-plugin</artifactId>
-				<version>${post.execution.updates.plugin.version}</version>
-				<configuration>
-					<jsonResultsDir>target/site/serenity/json-results</jsonResultsDir>
-					<dataDir>src/main/resources/json</dataDir>
-					<mappingsDir>src/main/resources/mappings</mappingsDir>
-					<propertiesDir>src/main/resources</propertiesDir>
-				</configuration>
-				<executions>
-					<execution>
-						<phase>post-integration-test</phase>
-						<goals>
-							<goal>post-execution-updates</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>			
+			</plugin>		
 			<!--S-->
 			<plugin>
 				<groupId>net.serenity-bdd.maven.plugins</groupId>
@@ -210,6 +190,26 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+			<!--P-->		
+			<plugin>
+				<groupId>com.homeoffice</groupId>
+				<artifactId>post-execution-updates-plugin</artifactId>
+				<version>${post.execution.updates.plugin.version}</version>
+				<configuration>
+					<jsonResultsDir>target/site/serenity/json-results</jsonResultsDir>
+					<dataDir>src/main/resources/json</dataDir>
+					<mappingsDir>src/main/resources/mappings</mappingsDir>
+					<propertiesDir>src/main/resources</propertiesDir>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>post-execution-updates</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>			
 			<plugin>
 				<groupId>com.github.temyers</groupId>
 				<artifactId>cucumber-jvm-parallel-plugin</artifactId>
@@ -226,7 +226,6 @@
 							<featuresDirectory>src/test/resources/features</featuresDirectory>
 							<cucumberOutputDir>target/site/serenity/json-results</cucumberOutputDir>
 							<format>json, pretty</format>
-							<tags>"@SJI-7"</tags>
 							<namingScheme>feature-title</namingScheme>
 						</configuration>
 					</execution>
