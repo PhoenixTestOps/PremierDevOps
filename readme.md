@@ -38,11 +38,10 @@ Runners are created on the fly and can be found under `target/generated-test-sou
 This project provides a number of common classes that are used by various projects within the qa-framework suite. It must be installed to your local .m2 folder using one of the following 2 methods:
 
 1. Install the pre-built jar by running the following command (assuming you are in the root dir):
-
 `mvn install:install-file -Dfile=src/main/java/dependencies/bdd-framework-utilities/bdd-framework-utilities-1.0-SNAPSHOT.jar -DpomFile=src/main/java/dependencies/bdd-framework-utilities/pom.xml`
 
-2. Clone project and install locally:
 
+2. Clone project and install locally:
 The repo can be found [here](https://gitlab.com/qa-framework/bdd-framework-utilities).
 The command to install it via maven is: `mvn clean install`
 
