@@ -21,7 +21,7 @@ public class RESTStepDefinitions {
     @Given("^I am on the JIRA web page as '(.*)'$")
     public void checkJIRA(String userName) throws Throwable {
     	
-    	HashMap<String, String> usersMap = DataMapper.populate("src/test/resources/test-data/mappings/users.csv");
+    	HashMap<String, String> usersMap = DataMapper.populate("src/test/resources/datamappings/users.csv");
         
         String password = usersMap.get(userName);
         
@@ -69,7 +69,7 @@ public class RESTStepDefinitions {
 
     @When("^I request to transition the new story to '(.*)'$")
     public void closeStory(String actionName) throws Throwable{
-    	HashMap<String, String> transitionsMap = DataMapper.populate("src/test/resources/test-data/mappings/transitions.csv");
+    	HashMap<String, String> transitionsMap = DataMapper.populate("src/test/resources/datamappings/transitions.csv");
         String transitionID = transitionsMap.get(actionName);
         jiraResponseCode = restPage.transitionStory(transitionID);
     }

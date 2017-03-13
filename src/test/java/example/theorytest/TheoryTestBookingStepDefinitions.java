@@ -61,7 +61,7 @@ public class TheoryTestBookingStepDefinitions {
     @When ("^I select the test '(.*)'$")
     public void select_test(String actionName) throws IOException {
 
-        String filePath = "src/test/resources/test-data/mappings/TheoryTestOptions.csv";
+        String filePath = "src/test/resources/datamappings/TheoryTestOptions.csv";
     	HashMap<String, String> testOptions = DataMapper.populate(filePath);
 
         String testID = testOptions.get(actionName).toString();
@@ -72,7 +72,7 @@ public class TheoryTestBookingStepDefinitions {
     @When ("^I select the language '(.*)'$")
     public void select_language(String actionName) throws IOException {
 
-        String filePath = "src/test/resources/test-data/mappings/TheoryLanguageOptions.csv";
+        String filePath = "src/test/resources/datamappings/TheoryLanguageOptions.csv";
     	HashMap<String, String> languageOptions = DataMapper.populate(filePath);
 
         String languageID = languageOptions.get(actionName).toString();
@@ -84,7 +84,7 @@ public class TheoryTestBookingStepDefinitions {
     @When ("^I respond '(.*)' to needing extra support$")
     public void select_support(String actionName) throws IOException {
 
-    	String filePath = "src/test/resources/test-data/mappings/TheorySupportOptions.csv";
+    	String filePath = "src/test/resources/datamappings/TheorySupportOptions.csv";
     	HashMap<String, String> supportOptions = DataMapper.populate(filePath);
 
         String supportID = supportOptions.get(actionName).toString();
@@ -105,7 +105,4 @@ public class TheoryTestBookingStepDefinitions {
     public void check_appointment_page(String actionName){
         theoryTestBookingPage.check_appointment_destination(actionName);
     }
-
-
-
 }
