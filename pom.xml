@@ -191,16 +191,16 @@
 				-->
 			</plugin>
 			<!--P-->
-			<!-- This plug-in requires a working instance of jira and zephyr. -->
-			<!--			
+			<!-- This plug-in requires a working instance of jira and zephyr. -->			
+			<!--
 			<plugin>
 				<groupId>com.homeoffice</groupId>
-				<artifactId>post-execution-updates-plugin</artifactId>
+				<artifactId>bdd-jira-zephyr-plugin</artifactId>
 				<version>${post.execution.updates.plugin.version}</version>
 				<configuration>
 					<jsonResultsDir>target/site/serenity/json-results</jsonResultsDir>
-					<dataDir>src/main/resources/json</dataDir>
-					<mappingsDir>src/main/resources/mappings</mappingsDir>
+					<dataDir>src/test/resources/json</dataDir>
+					<mappingsDir>src/test/resources/datamappings</mappingsDir>
 					<propertiesDir>src/main/resources</propertiesDir>
 				</configuration>
 				<executions>
