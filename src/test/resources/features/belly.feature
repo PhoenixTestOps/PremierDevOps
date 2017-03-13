@@ -1,4 +1,4 @@
-@regression
+@belly @issue:SJI-2377
 Feature: Belly and cukes
 As a Belly user
 I want to know when I am hungry
