@@ -38,13 +38,13 @@ public class RESTStepDefinitions {
 
     @When("^I create a new user story based on '(.*)'$")
     public void createStory(String actionName) throws Throwable{
-        String filePath = "src/test/resources/test-data/JSON/"+actionName;
+        String filePath = "src/test/resources/json/"+actionName;
         jiraResponseCode = restPage.createStory(filePath);
     }
 
     @When("^I request to update the new story with details from '(.*)'$")
     public void requestUpdate(String actionName) throws Throwable{
-        String filePath = "src/test/resources/test-data/JSON/"+actionName;
+        String filePath = "src/test/resources/json/"+actionName;
         jiraResponseCode = restPage.updateStory(filePath);
     }
 

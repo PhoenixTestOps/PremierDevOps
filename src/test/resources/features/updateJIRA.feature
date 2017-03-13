@@ -11,8 +11,8 @@ So that I can manage stories
 		Then I receive status code '<Response Code>'
 		
 		Examples:
-		| JSONFile		| Response Code	|
-		| New178.json	| 201			|
+		| JSONFile			| Response Code	|
+		| create-issue.json	| 201			|
 		
 		
 	Scenario Outline: User is able to ASSIGN a story to another user
@@ -24,8 +24,8 @@ So that I can manage stories
 		Then I receive status code '<Response Code>'
 		
 		Examples:
-		| JSONFile		| User	| Response Code	|
-		| New178.json	| admin	| 204			|
+		| JSONFile			| User	| Response Code	|
+		| create-issue.json	| admin	| 204			|
 
 
 	Scenario Outline: User is able to DELETE a story
@@ -37,8 +37,8 @@ So that I can manage stories
 		Then I receive status code '204'
 		
 		Examples:
-		| JSONFile		|
-		| New178.json	|
+		| JSONFile			|
+		| create-issue.json	|
 
 
 	Scenario Outline: User is able to TRANSITION the state of a story
@@ -50,9 +50,9 @@ So that I can manage stories
 		Then I receive status code '204'
 		
 		Examples:
-		| JSONFile		| Transition	| User	|
-		| New178.json	| In Progress	| admin	|
-		| New178.json	| Done			| admin	|
+		| JSONFile			| Transition	| User	|
+		| create-issue.json	| In Progress	| admin	|
+		| create-issue.json	| Done			| admin	|
 
 
 	Scenario Outline: User is able to UPDATE a story
@@ -64,5 +64,5 @@ So that I can manage stories
 		Then I receive status code '204'
 		
 		Examples:
-		| JSONFile		| newJSONFile	|
-		| New178.json	| New179.json	|
+		| JSONFile			| newJSONFile		|
+		| create-issue.json	| update-issue.json	|
