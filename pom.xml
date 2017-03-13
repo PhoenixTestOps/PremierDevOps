@@ -74,11 +74,6 @@
 	
 	<!--REPOSITORIES-->
 	<repositories>
-		<repository>
-			<id>tdcs_framework-repository</id>
-			<url>https://gitlab.com/tdcs_framework/maven/raw/master/repository/</url>
-		</repository>
-		
 		<!-- serenity-cucumber 1.1.9 is only available from this repository and is the only version that works with serenity-jira-requirements-provider 1.1.1 (allowing 2 way jira integration to work) -->
 		<repository>
 			<snapshots>
