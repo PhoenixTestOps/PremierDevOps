@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.homeoffice</groupId>
@@ -7,18 +6,19 @@
 	
 	<!--PROPERTIES-->
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>	
 		<!--B-->
 		<bdd.framework.utilities.version>1.0-SNAPSHOT</bdd.framework.utilities.version>	
 		<!--C-->
 		<cucumber.parallel.plugin.version>2.1.1-SNAPSHOT</cucumber.parallel.plugin.version>
-		<!--F-->
-		<failsafe.version>2.19.1</failsafe.version>
 		<!--J-->
 		<jacoco.maven.plugin.version>0.7.7.201606060606</jacoco.maven.plugin.version>
 		<java.source.version>1.8</java.source.version>
 		<java.target.version>1.8</java.target.version>
 		<!--M-->
 		<maven.compiler.version>3.1</maven.compiler.version>
+		<maven.failsafe.plugin.version>2.19.1</maven.failsafe.plugin.version>		
 		<!--P-->
 		<post.execution.updates.plugin.version>1.0-SNAPSHOT</post.execution.updates.plugin.version>
 		<!--R-->
@@ -29,8 +29,6 @@
 		<serenity.rest.assured.version>1.2.2-rc.5</serenity.rest.assured.version>
 		<serenity.jira.requirements.provider.version>1.1.1</serenity.jira.requirements.provider.version>			
 		<slf4j.version>1.7.5</slf4j.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<!--END of PROPERTIES-->
 	
@@ -92,6 +90,28 @@
 		<plugins>
 			<!--C-->
 			<plugin>
+				<groupId>com.github.temyers</groupId>
+				<artifactId>cucumber-jvm-parallel-plugin</artifactId>
+				<version>${cucumber.parallel.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>generateRunners</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>generateRunners</goal>
+						</goals>
+						<configuration>
+							<glue>example</glue>
+							<featuresDirectory>src/test/resources/features</featuresDirectory>
+							<cucumberOutputDir>target/site/serenity/json-results</cucumberOutputDir>
+							<format>json, pretty</format>
+							<namingScheme>feature-title</namingScheme>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>			
+			<!--M-->
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven.compiler.version}</version>
@@ -100,11 +120,10 @@
 					<target>${java.target.version}</target>
 				</configuration>
 			</plugin>
-			<!--F-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>${failsafe.version}</version>
+				<version>${maven.failsafe.plugin.version}</version>
 				<executions>
 					<execution>
 						<id>acceptance-test</id>
@@ -188,7 +207,7 @@
 						<version>${serenity.jira.requirements.provider.version}</version>
 					</dependency>
 				</dependencies>
-				-->
+				 -->
 			</plugin>
 			<!--P-->
 			<!-- This plug-in requires a working instance of jira and zephyr. -->			
@@ -213,27 +232,6 @@
 				</executions>
 			</plugin>
 			-->
-			<plugin>
-				<groupId>com.github.temyers</groupId>
-				<artifactId>cucumber-jvm-parallel-plugin</artifactId>
-				<version>${cucumber.parallel.plugin.version}</version>
-				<executions>
-					<execution>
-						<id>generateRunners</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>generateRunners</goal>
-						</goals>
-						<configuration>
-							<glue>example</glue>
-							<featuresDirectory>src/test/resources/features</featuresDirectory>
-							<cucumberOutputDir>target/site/serenity/json-results</cucumberOutputDir>
-							<format>json, pretty</format>
-							<namingScheme>feature-title</namingScheme>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 		<!--END of PLUGINS-->
 	</build>
