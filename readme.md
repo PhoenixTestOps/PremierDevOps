@@ -33,6 +33,8 @@ The purpose of this plugin is to facilitate parallel execution of tests as it ge
 
 Runners are created on the fly and can be found under `target/generated-test-sources/cucumber`. They take the naming convention `FeatureXXIT.java`, where XX is a one up counter.
 
+The plugin can be further configured by following the guide provided by the developers - [cucumber-jvm-parallel-plugin](https://github.com/temyers/cucumber-jvm-parallel-plugin)
+
 
 ### bdd-framework-utilities
 This project provides a number of common classes that are used by various projects within the qa-framework suite. It must be installed to your local .m2 folder using one of the following 2 methods:
@@ -53,7 +55,7 @@ Comments have been provided in the file to help you understand the purpose of th
 
 
 ### < env >.properties
-If you have environment specific configuration that your tests need access to at runtime, then an environment file can be created. The location of the file is currently set to `src/main/resources`
+If you have environment specific configuration that your tests need access to at runtime, then an environment file can be created. The mangagement of this file is handled by the PropertyReader class within [bdd-framework-utilities](https://gitlab.com/qa-framework/bdd-framework-utilities).
 
 There is no strict naming convention, but the name of the file (excluding extension) must be passed in as a cmd line parameter when running your tests from Maven. For example, if you call your file `local.properties`, then the cmd line arg to pass to the `mvn` command would be `-Denv=local`.
 
