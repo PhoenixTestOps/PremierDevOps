@@ -18,7 +18,8 @@
 		<java.target.version>1.8</java.target.version>
 		<!--M-->
 		<maven.compiler.version>3.1</maven.compiler.version>
-		<maven.failsafe.plugin.version>2.19.1</maven.failsafe.plugin.version>		
+		<maven.failsafe.plugin.version>2.19.1</maven.failsafe.plugin.version>
+		<maven.javadoc.plugin.version>2.10.4</maven.javadoc.plugin.version>		
 		<!--P-->
 		<post.execution.updates.plugin.version>1.0-SNAPSHOT</post.execution.updates.plugin.version>
 		<!--R-->
@@ -120,6 +121,19 @@
 					<target>${java.target.version}</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven.javadoc.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>					
+					</execution>
+				</executions>
+			</plugin>			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
