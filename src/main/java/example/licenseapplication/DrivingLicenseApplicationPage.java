@@ -7,11 +7,6 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 import static com.thoughtworks.selenium.SeleneseTestNgHelper.assertEquals;
 
-/**
- * @author : JULIA TUCKER
- * @date : 20/12/2016
- */
-
 //SPECIFY AND INITIALISE URL ADDRESS
 @DefaultUrl("https://www.gov.uk/apply-first-provisional-driving-licence")
 public class DrivingLicenseApplicationPage extends PageObject {

@@ -12,11 +12,6 @@ import static org.junit.Assert.assertEquals;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * @author : JULIA TUCKER
- * @date : 20/12/2016
- */
-
 //SPECIFY AND INITIALISE URL ADDRESS
 @DefaultUrl("https://www.gov.uk/book-theory-test")
 public class TheoryTestBookingPage extends PageObject{
