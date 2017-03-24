@@ -107,13 +107,9 @@
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
-						<phase>prepare-package</phase>
 						<goals>
-							<goal>javadoc</goal>
-						</goals>
-						<configuration>
-							<reportOutputDirectory>target/site/javadoc</reportOutputDirectory>
-						</configuration>						
+							<goal>jar</goal>
+						</goals>					
 					</execution>
 				</executions>
 			</plugin>			
