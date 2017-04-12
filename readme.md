@@ -1,8 +1,6 @@
 bdd-acceptance-test
 ===================
 
-> ***This page is in the process of being updated***
-
 ## Pre-requisistes
 
 1. Maven is installed and the environment variable set (From the command line run "mvn -v")
