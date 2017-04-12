@@ -21,6 +21,15 @@ This framework provides the capability to create and execute business facing tes
 6. Testing REST services using [Rest Assured](http://serenity-bdd.info/docs/serenity/#_testing_rest_with_serenity_bdd)
 
 
+> ***Browser compatibility testing***
+
+> Serenity only executes tests against a single browser. This behaviour is controlled by the `serenity.properties` file and tests can be configured to run on your local machine or within selenium grid. If you want to execute tests against different browsers (Chrome, Firefox, iexplorer), then you would need to execute your tests for each browser e.g. if you want to run against Chrome and Firefox, then this would require 2 separate executions of your tests. Whereas this approach is acceptable, it should be noted that you will end up overriding the previous report.
+
+> One way to overcome this is to clone the framework in completely separate workspaces (1 workspace per browser), however this will end up producing multiple reports per browser.
+
+> As a workaround, the [bdd-browser-compatibility-suite](https://gitlab.com/qa-framework/bdd-generate-browser-features-plugin) can be  used to execute tests against different browsers within selenium grid, whilst ensuring a single report is generated.
+
+
 Configuration
 -------------
 Once you have cloned the [qa-framework/bdd-acceptance-test](https://gitlab.com/qa-framework/bdd-acceptance-test) repo locally, the following updates will be required in the project:
