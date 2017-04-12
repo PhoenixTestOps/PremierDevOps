@@ -51,8 +51,8 @@ So that I can manage stories
 		
 		Examples:
 		| JSONFile			| Transition	| User	|
-		| create-issue.json	| In Progress	| admin	|
-		| create-issue.json	| Done			| admin	|
+		| create-issue.json	| IN PROGRESS	| admin	|
+		| create-issue.json	| DONE			| admin	|
 
 
 	Scenario Outline: User is able to UPDATE a story
