@@ -1,4 +1,4 @@
-@ui @regression @issue:SJI-10
+@ui @regression
 Feature: Driving Theory Test Booking
 As a UK citizen
 I want to book my driving theory test

@@ -1,4 +1,4 @@
-@regression @issue:SJI-8 @ui
+@regression @ui
 Feature: Driving License Application
 As a UK citizen
 I want to apply for my provisional driving license

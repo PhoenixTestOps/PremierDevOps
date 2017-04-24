@@ -1,4 +1,4 @@
-@regression @ui @issue:SJI-9
+@regression @ui
 Feature: Homeoffice navigation
 As a student
 I want to navigate to the Government student finance page
