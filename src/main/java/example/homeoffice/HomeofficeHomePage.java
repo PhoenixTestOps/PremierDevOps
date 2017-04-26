@@ -1,10 +1,5 @@
 package example.homeoffice;
 
-/**
- * @author : ABDUL SAIF
- * @date   : 01/12/2016
- */
-
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
