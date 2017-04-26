@@ -68,14 +68,9 @@ There is no strict naming convention, but the name of the file (excluding extens
 
 
 ### pom.xml
-The pom.xml requires minimal configuration in order to execute the tests. There are 2 specific capabilities that will need to be enabled if you wish to use them:
+The pom.xml requires minimal configuration in order to execute the tests and produce a report. If you want the framework to provide story and epic level coverage reports, then you will have to enable the `serenity-jira-requirements-provider`. This dependency is required by the `serenity-maven-plugin` plugin and is disabled (commented out in the pom) by default.
 
-1. Enable JIRA requirements in the Serenity report
-The `serenity-jira-requirements-provider` dependency will allow JIRA to determine the epics and stories that you have defined and list them in the Requirements page of the report. This dependency is required by the `serenity-maven-plugin` plugin and is disabled by default. If you have connectivity to a working instance of JIRA and wish to provide epic/story coverage in the report, then this dependency should be enabled.
-
-
-2. Enable post execution updates within Zephyr
-This plugin offers the capability to create Zephyr tests for your scenarios and update their execution status. It is disabled by default and can be enabled if you have connectivity to a working instance of JIRA and Zephyr. Please visit the [bdd-jira-zephyr-plugin](https://gitlab.com/qa-framework/bdd-jira-zephyr-plugin) homepage for more information about the plugin.
+NOTE: once you enable the `serenity-jira-requirements-provider`, you will need to tag your features with the JIRA ID of its associated story using the notation **@issue:XYZ-123**, where XYZ-123 is the JIRA story ID. Also, stories will need to be linked to an epic.
 
 
 Usage
