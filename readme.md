@@ -102,7 +102,8 @@ The tests can be executed in a number of ways in Maven:
   `mvn clean verify -Dit.test=Feature01IT`						| Run a single feature
   `mvn failsafe:integration-test -Dit.test=Belly01IT`			| Run a single scenario, but without recompiling the code
   `mvn clean verify -Dcucumber.options="--tags @regression"`	| Run scenarios with a specific tag
-
+  `mvn clean verify -Dit.test=Belly01IT` | Run a single test by compiling the code 
+  `mvn failsafe:integration-test -Dit.test=Belly01IT` | Run a single test from compiled sources
 
 Reports
 -------
