@@ -62,7 +62,7 @@ Comments have been provided in the file to help you understand the purpose of th
 
 
 ### < env >.properties
-If you have environment specific configuration that your tests need access to at runtime, then an environment file can be created. The mangagement of this file is handled by the PropertyReader class within [bdd-framework-utilities](https://gitlab.com/qa-framework/bdd-framework-utilities).
+If you have environment specific configuration that your tests need access to at runtime, then an environment file can be created. Please refer to the PropertyReader class within [bdd-framework-utilities](https://gitlab.com/qa-framework/bdd-framework-utilities) for details on how these properties can be accessed.
 
 There is no strict naming convention, but the name of the file (excluding extension) must be passed in as a cmd line parameter when running your tests from Maven. For example, if you call your file `local.properties`, then the cmd line arg to pass to the `mvn` command would be `-Denv=local`.
 
