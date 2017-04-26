@@ -9,10 +9,6 @@ import java.util.HashMap;
 
 import com.homeoffice.bdd.framework.utilities.DataMapper;
 
-/**
- * @author : JULIA TUCKER
- * @date : 20/12/2016
- */
 public class TheoryTestBookingStepDefinitions {
 
     TheoryTestBookingPage theoryTestBookingPage;

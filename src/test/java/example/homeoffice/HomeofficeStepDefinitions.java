@@ -1,10 +1,5 @@
 package example.homeoffice;
 
-/**
- * @author : ABDUL SAIF
- * @date   : 02/12/2016
- */
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
