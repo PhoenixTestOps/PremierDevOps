@@ -56,9 +56,9 @@ The command to install it via maven is: `mvn clean install`
 
 
 ### serenity.properties
-`serenity.properties` lives in the root directory of your project. It is required in order to configure a number of property values that Serenity requires in order to execute tests and integrate with JIRA. Please review the file for a list 
+`serenity.properties` lives in the root directory of your project. It is required in order to configure a number of property values that Serenity requires in order to execute tests and integrate with JIRA.
 
-Comments have been provided in the file to help you understand the purpose of the property. The entire list of properties can be found [here](http://serenity-bdd.info/docs/serenity/#_serenity_system_properties_and_configuration)
+Comments have been provided in the file to help you understand the purpose of the property. The entire list of properties can be found [here](http://serenity-bdd.info/docs/serenity/#_serenity_system_properties_and_configuration).
 
 
 ### < env >.properties
