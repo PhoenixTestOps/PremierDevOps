@@ -28,7 +28,7 @@
 		<serenity.cucumber.version>1.1.9</serenity.cucumber.version>
 		<serenity.maven.version>1.1.36</serenity.maven.version>
 		<serenity.rest.assured.version>1.2.2-rc.5</serenity.rest.assured.version>
-		<serenity.jira.requirements.provider.version>1.1.1</serenity.jira.requirements.provider.version>			
+		<serenity.jira.requirements.provider.version>1.1.1</serenity.jira.requirements.provider.version>	
 		<slf4j.version>1.7.5</slf4j.version>
 	</properties>
 	<!--END of PROPERTIES-->
@@ -133,7 +133,7 @@
 						</goals>					
 					</execution>
 				</executions>
-			</plugin>			
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
@@ -219,33 +219,10 @@
 						<groupId>net.serenity-bdd</groupId>
 						<artifactId>serenity-jira-requirements-provider</artifactId>
 						<version>${serenity.jira.requirements.provider.version}</version>
-					</dependency>
+					</dependency>							
 				</dependencies>
-				 -->
+				-->
 			</plugin>
-			<!--P-->
-			<!-- This plug-in requires a working instance of jira and zephyr. -->			
-			<!--
-			<plugin>
-				<groupId>com.homeoffice</groupId>
-				<artifactId>bdd-jira-zephyr-plugin</artifactId>
-				<version>${post.execution.updates.plugin.version}</version>
-				<configuration>
-					<jsonResultsDir>target/site/serenity/json-results</jsonResultsDir>
-					<dataDir>src/test/resources/json</dataDir>
-					<mappingsDir>src/test/resources/datamappings</mappingsDir>
-					<propertiesDir>src/main/resources</propertiesDir>
-				</configuration>
-				<executions>
-					<execution>
-						<phase>post-integration-test</phase>
-						<goals>
-							<goal>post-execution-updates</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			-->
 		</plugins>
 		<!--END of PLUGINS-->
 	</build>
