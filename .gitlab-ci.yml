@@ -13,7 +13,6 @@ test:
     # - sleep 10
     # - java -jar selenium-server-standalone-3.0.1.jar -role node -hub http://localhost:4444/grid/register/ -port 5566 -browser browserName=firefox,maxInstances=5 -browser browserName=chrome,maxInstances=5 -maxSession 5 &
     - mvn install:install-file -Dfile=src/main/java/dependencies/bdd-framework-utilities/bdd-framework-utilities-1.0-SNAPSHOT.jar -DpomFile=src/main/java/dependencies/bdd-framework-utilities/pom.xml -q
-    - mvn install:install-file -Dfile=src/main/java/dependencies/cucumber-jvm-parallel-plugin/cucumber-jvm-parallel-plugin-2.1.1-SNAPSHOT.jar -DpomFile=src/main/java/dependencies/cucumber-jvm-parallel-plugin/pom.xml -q
     - mvn install:install-file -Dfile=src/main/java/dependencies/bdd-jira-zephyr-plugin/bdd-jira-zephyr-plugin-1.0-SNAPSHOT.jar -DpomFile=src/main/java/dependencies/bdd-jira-zephyr-plugin/pom.xml -q
     - mvn clean verify -q -Denv=local "-Dcucumber.options=--tags @regression"
   artifacts:
