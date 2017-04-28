@@ -33,15 +33,6 @@ Configuration
 Once you have cloned the [qa-framework/bdd-acceptance-test](https://gitlab.com/qa-framework/bdd-acceptance-test) repo locally, the following updates will be required in the project:
 
 
-### cucumber-jvm-parallel-plugin
-The purpose of this plugin is to facilitate parallel execution of tests as it generates a Cucumber runner for each scenario/feature file found in your project. It must be installed to your local .m2 folder using the following command (assuming you are in the root dir):
-
-`mvn install:install-file -Dfile=src/main/java/dependencies/cucumber-jvm-parallel-plugin/cucumber-jvm-parallel-plugin-2.1.1-SNAPSHOT.jar -DpomFile=src/main/java/dependencies/cucumber-jvm-parallel-plugin/pom.xml`
-
-Runners are created on the fly and can be found under `target/generated-test-sources/cucumber`. They take the naming convention `FeatureXXIT.java`, where XX is a one up counter.
-
-The plugin can be further configured by following the guide provided by the developers - [cucumber-jvm-parallel-plugin](https://github.com/temyers/cucumber-jvm-parallel-plugin)
-
 
 ### bdd-framework-utilities
 This project provides a number of common classes that are used by various projects within the qa-framework suite. It must be installed to your local .m2 folder using one of the following 2 methods:
