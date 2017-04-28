@@ -11,7 +11,7 @@
 		<!--B-->
 		<bdd.framework.utilities.version>1.0-SNAPSHOT</bdd.framework.utilities.version>	
 		<!--C-->
-		<cucumber.parallel.plugin.version>2.1.1-SNAPSHOT</cucumber.parallel.plugin.version>
+		<cucumber.parallel.plugin.version>2.2.0</cucumber.parallel.plugin.version>
 		<!--J-->
 		<jacoco.maven.plugin.version>0.7.7.201606060606</jacoco.maven.plugin.version>
 		<java.source.version>1.8</java.source.version>
@@ -102,6 +102,7 @@
 							<goal>generateRunners</goal>
 						</goals>
 						<configuration>
+							<customVmTemplate>src/test/resources/cucumber-serenity-runner.vm</customVmTemplate>
 							<glue>example</glue>
 							<featuresDirectory>src/test/resources/features</featuresDirectory>
 							<cucumberOutputDir>target/site/serenity/json-results</cucumberOutputDir>
