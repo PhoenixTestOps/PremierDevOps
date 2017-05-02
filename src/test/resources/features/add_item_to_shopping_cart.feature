@@ -1,6 +1,7 @@
 @component:ui
 @version:Release-1
 @version:Sprint-1.1
+@regression
 Feature: Add an item to the shopping basket
   As a customer
   I want to be able to purchase items online

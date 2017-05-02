@@ -1,5 +1,6 @@
 @component:ui
 @version:Release-2
+@regression
 Feature: Search by keyword
   As a retailer
   I want customers to be able to search for products using keywords
