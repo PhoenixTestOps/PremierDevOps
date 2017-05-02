@@ -29,7 +29,7 @@ So that I can manage the project backlog
 		| admin	| 204			| admin		|	
 
 
-	Scenario Outline: User is able to DELETE a story
+	Scenario Outline: PO is able to DELETE a story
 		Given I am logged into JIRA as '<User>'
 		And I have permission to 'CREATE_ISSUE'
 		And I have permission to 'DELETE_ISSUE'
@@ -42,7 +42,7 @@ So that I can manage the project backlog
 		| admin	| 204			|
 		
 
-	Scenario Outline: User is able to TRANSITION the state of a story
+	Scenario Outline: PO is able to TRANSITION the state of a story
 		Given I am logged into JIRA as '<User>'
 		And I have permission to 'CREATE_ISSUE'
 		And I have permission to 'CLOSE_ISSUE'
@@ -56,7 +56,7 @@ So that I can manage the project backlog
 		| admin	| DONE			| admin	|
 
 
-	Scenario Outline: User is able to UPDATE a story
+	Scenario Outline: PO is able to UPDATE a story
 		Given I am logged into JIRA as '<User>'
 		And I have permission to 'CREATE_ISSUE'
 		And I have permission to 'EDIT_ISSUE'
