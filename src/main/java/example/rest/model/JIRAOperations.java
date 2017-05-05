@@ -9,15 +9,13 @@ import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.Response;
 
-import net.serenitybdd.core.pages.PageObject;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static net.serenitybdd.rest.SerenityRest.*;
 
-public class JIRAOperations extends PageObject {
+public class JIRAOperations {
 	
 	private static Response response;
 	private static String storyID;
