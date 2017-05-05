@@ -2,14 +2,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.homeoffice</groupId>
 	<artifactId>bdd-acceptance-test</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	
 	<!--PROPERTIES-->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>	
 		<!--B-->
-		<bdd.framework.utilities.version>1.0.0-SNAPSHOT</bdd.framework.utilities.version>	
+		<bdd.framework.utilities.version>1.0-SNAPSHOT</bdd.framework.utilities.version>	
 		<!--C-->
 		<cucumber.parallel.plugin.version>2.2.0</cucumber.parallel.plugin.version>
 		<!--J-->
