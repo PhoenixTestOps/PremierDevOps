@@ -9,13 +9,15 @@ import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.Response;
 
+import net.serenitybdd.core.pages.PageObject;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static net.serenitybdd.rest.SerenityRest.*;
 
-public class JIRAOperations {
+public class JIRAOperations extends PageObject {
 	
 	private static Response response;
 	private static String storyID;
@@ -23,6 +25,8 @@ public class JIRAOperations {
 	private static String restBasePath;
 	
 	public JIRAOperations() throws IOException{
+		
+		System.out.println("comstructir******************");
 		
 		//TODO - Update this such that the user specifies the entire path in mvn.
 		//This will also mean that the property need not be passed in at teh cmd line
@@ -35,7 +39,7 @@ public class JIRAOperations {
 		restBasePath = PropertyReader.getValueOf("rest.basePath");
 	}
 	
-	public static void setup(String username, String password){
+	public void login(String username, String password){
 		
 		RestAssured.baseURI = restBaseuri;
 		RestAssured.basePath = restBasePath;

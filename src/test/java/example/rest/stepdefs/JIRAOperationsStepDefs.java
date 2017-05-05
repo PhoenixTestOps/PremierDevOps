@@ -5,7 +5,10 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import example.rest.model.JIRAOperations;
 
+import java.io.IOException;
 import java.util.HashMap;
+
+import org.junit.BeforeClass;
 
 import com.homeoffice.bdd.framework.utilities.DataMapper;
 
@@ -19,12 +22,18 @@ public class JIRAOperationsStepDefs {
 	private JIRAOperations jiraOps;
 	private int jiraResponseCode;
 	
+	@BeforeClass
+	public void setup() throws IOException{
+		
+		jiraOps = new JIRAOperations();
+	}
+	
 	@Given("^I am logged into JIRA as '(.*)'$")
-	public void setupAuthentication(String userName) throws Throwable {
+	public void loginWith(String userName) throws Throwable {
 		
 		HashMap<String, String> usersMap = DataMapper.populate("src/test/resources/datamappings/users.csv");
 		String password = usersMap.get(userName);        
-		JIRAOperations.setup(userName, password);
+		jiraOps.login(userName, password);
 		
 		assertFalse(password.isEmpty());
 	}
