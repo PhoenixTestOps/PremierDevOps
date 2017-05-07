@@ -1,0 +1,45 @@
+{
+
+  "criteria": {
+
+    "operator": "AND"
+
+  , "searchTerms": [
+
+      {
+
+        "attribute": "gender"
+
+      , "type": "STRING"
+
+      , "operator": "="
+
+      , "value": "FEMALE"
+
+      }
+
+    ]
+
+  }
+
+,
+
+  "searchJustification": {
+
+    "title": "Mr",
+
+    "reason": "Because I buy the player",
+
+    "justification": "how good the player is?",
+
+    "onBehalfOf" : {
+
+      "id": "123",
+
+      "Name": "Pep"
+
+    }
+
+  }
+
+}

@@ -1,4 +1,4 @@
-bdd-acceptance-test
+Working bdd-acceptance-test for WebAppTester
 ===================
 
 ## Pre-requisistes
@@ -19,50 +19,9 @@ This framework provides the capability to create and execute business facing tes
 6. Testing REST services using [Rest Assured](http://serenity-bdd.info/docs/serenity/#_testing_rest_with_serenity_bdd)
 
 
-> ***Browser compatibility testing***
-
-> Serenity only executes tests against a single browser. This behaviour is controlled by the `serenity.properties` file and tests can be configured to run on your local machine or within selenium grid. If you want to execute tests against different browsers (Chrome, Firefox, iexplorer), then you would need to execute your tests for each browser e.g. if you want to run against Chrome and Firefox, then this would require 2 separate executions of your tests. Whereas this approach is acceptable, it should be noted that you will end up overriding the previous report.
-
-> One way to overcome this is to clone the framework in completely separate workspaces (1 workspace per browser), however this will end up producing multiple reports per browser.
-
-> As a workaround, the [bdd-browser-compatibility-suite](https://gitlab.com/qa-framework/bdd-generate-browser-features-plugin) can be  used to execute tests against different browsers within selenium grid, whilst ensuring a single report is generated.
-
-
 Configuration
 -------------
-Once you have cloned the [qa-framework/bdd-acceptance-test](https://gitlab.com/qa-framework/bdd-acceptance-test) repo locally, the following updates will be required in the project:
-
-
-
-### bdd-framework-utilities
-This project provides a number of common classes that are used by various projects within the qa-framework suite. It must be installed to your local .m2 folder using one of the following 2 methods:
-
-1. Install the pre-built jar by running the following command (assuming you are in the root dir):
-`mvn install:install-file -Dfile=src/main/java/dependencies/bdd-framework-utilities/bdd-framework-utilities-1.0-SNAPSHOT.jar -DpomFile=src/main/java/dependencies/bdd-framework-utilities/pom.xml`
-
-
-2. Clone project and install locally:
-The repo can be found [here](https://gitlab.com/qa-framework/bdd-framework-utilities).
-The command to install it via maven is: `mvn clean install`
-
-
-### serenity.properties
-`serenity.properties` lives in the root directory of your project. It is required in order to configure a number of property values that Serenity requires in order to execute tests and integrate with JIRA.
-
-Comments have been provided in the file to help you understand the purpose of the property. The entire list of properties can be found [here](http://serenity-bdd.info/docs/serenity/#_serenity_system_properties_and_configuration).
-
-
-### < env >.properties
-If you have environment specific configuration that your tests need access to at runtime, then an environment file can be created. Please refer to the PropertyReader class within [bdd-framework-utilities](https://gitlab.com/qa-framework/bdd-framework-utilities) for details on how these properties can be accessed.
-
-There is no strict naming convention, but the name of the file (excluding extension) must be passed in as a cmd line parameter when running your tests from Maven. For example, if you call your file `local.properties`, then the cmd line arg to pass to the `mvn` command would be `-Denv=local`.
-
-
-### pom.xml
-The pom.xml requires minimal configuration in order to execute the tests and produce a report. If you want the framework to provide story and epic level coverage reports, then you will have to enable the `serenity-jira-requirements-provider`. This dependency is required by the `serenity-maven-plugin` plugin and is disabled (commented out in the pom) by default.
-
-NOTE: once you enable the `serenity-jira-requirements-provider`, you will need to tag your features with the JIRA ID of its associated story using the notation **@issue:XYZ-123**, where XYZ-123 is the JIRA story ID. Also, stories will need to be linked to an epic.
-
+1. Clone project 
 
 Usage
 -----
